@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md overflow-y-auto">
+    <div className="fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md">
       <div className="flex flex-col h-full p-4">
         {/* Logo/Brand - Updated to match NEXUS Theme */}
         <div className="flex items-center gap-3 px-3 py-2 mb-6">
@@ -44,7 +44,7 @@ const Sidebar: React.FC = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 flex flex-col gap-2 mt-6">
+        <nav className="flex-1 flex flex-col gap-2 mt-6 overflow-y-auto pr-2">
           {menuItems.map((item, index) => {
             const Icon = item.icon;
             // Logika Aktif: Cek apakah URL saat ini sama dengan href menu
