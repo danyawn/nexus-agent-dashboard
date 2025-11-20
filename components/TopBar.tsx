@@ -36,8 +36,8 @@ const TopBar: React.FC = () => {
           <div className="hidden md:block h-8 w-px bg-white/10"></div>
         </div>
 
-        {/* Right - Actions */}
-        <div className="flex items-center gap-3 md:gap-4">
+        {/* Right - Actions (Desktop only, mobile has them in header) */}
+        <div className="hidden md:flex items-center gap-3 md:gap-4">
           <button className="flex items-center justify-center rounded-full h-9 md:h-10 w-9 md:w-10 bg-white/5 text-white/80 hover:text-[var(--primary)] hover:bg-[var(--primary)]/20 transition-colors">
             <Bell size={18} className="md:w-5 md:h-5" />
           </button>
