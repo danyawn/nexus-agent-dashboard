@@ -103,13 +103,13 @@ const AgentFleet: React.FC = () => {
 
   return (
     <div className="w-full">
-      {/* Filter Bar */}
-      <div className="flex gap-3 mb-8">
+      {/* Filter Bar - Horizontally scrollable on mobile */}
+      <div className="flex gap-3 mb-6 md:mb-8 overflow-x-auto pb-2 scrollbar-hide">
         {(['all', 'active', 'training'] as const).map((filterOption) => (
           <button
             key={filterOption}
             onClick={() => setFilter(filterOption)}
-            className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 ${
+            className={`px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 flex-shrink-0 whitespace-nowrap ${
               filter === filterOption
                 ? 'bg-[var(--primary)] text-black shadow-[0_0_15px_rgba(13,242,242,0.3)]'
                 : 'bg-white/5 text-white/70 border border-white/10 hover:border-[var(--primary)]/50 hover:text-white'
