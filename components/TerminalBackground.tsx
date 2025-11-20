@@ -39,6 +39,7 @@ export default function TerminalBackground() {
         height: '100vh',
         pointerEvents: 'none',
         overflow: 'hidden',
+        over
       }}
     >
       <TerminalUI
