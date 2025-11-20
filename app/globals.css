@@ -42,14 +42,18 @@
 }
 
 .glass-panel {
-  background-color: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg,
+    rgba(30, 50, 70, 0.25) 0%,
+    rgba(20, 40, 60, 0.15) 100%
+  );
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
   box-shadow:
-    0 8px 32px 0 rgba(0, 0, 0, 0.5),
-    0 0 32px 0 rgba(167, 239, 158, 0.1),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+    0 8px 40px 0 rgba(0, 0, 0, 0.7),
+    0 0 40px 0 rgba(167, 239, 158, 0.15),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.2),
+    inset 0 0 20px 0 rgba(167, 239, 158, 0.05);
 }
 
 .pulse-dot {
