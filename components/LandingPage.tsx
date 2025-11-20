@@ -164,19 +164,19 @@ export default function LandingPage() {
             </div>
 
             {/* Card B: Syndicate (Most Popular) */}
-            <div className="glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:shadow-lg hover:shadow-[var(--primary)]/50 transition-all duration-300">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[var(--primary)] text-black text-xs font-bold rounded-full">
+            <div className="glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:shadow-2xl hover:shadow-[var(--primary)]/60 hover:-translate-y-2 transition-all duration-300 md:scale-105 md:mb-8">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-cyan-400 text-black text-xs font-bold rounded-full shadow-lg shadow-[var(--primary)]/50">
                 MOST POPULAR
               </div>
               <div className="mb-6 pt-2">
                 <h3 className="text-2xl font-bold text-white mb-2">Syndicate</h3>
-                <p className="text-white/60 text-sm">For AI Startups</p>
+                <p className="text-white/70 text-sm font-medium">For AI Startups</p>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">$49</span>
-                <span className="text-white/60 text-sm">/month</span>
+                <span className="text-5xl font-bold text-white">$49</span>
+                <span className="text-white/70 text-sm font-medium">/month</span>
               </div>
-              <button className="w-full py-3 bg-[var(--primary)] text-black font-semibold rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 mb-8">
+              <button className="w-full py-3 bg-gradient-to-r from-[var(--primary)] to-cyan-400 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[var(--primary)]/50 transition-all duration-200 mb-8">
                 Start Trial
               </button>
               <div className="space-y-4 flex-1">
