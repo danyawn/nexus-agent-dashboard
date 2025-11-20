@@ -66,10 +66,17 @@ const DeployAgentModal: React.FC<DeployAgentModalProps> = ({
           border: 1px solid rgba(255, 255, 255, 0.1);
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
           border-radius: 12px;
-          padding: 32px;
+          padding: 24px;
           max-width: 28rem;
-          width: 100%;
+          width: 90%;
           position: relative;
+        }
+
+        @media (min-width: 768px) {
+          .modal-container {
+            padding: 32px;
+            width: 100%;
+          }
         }
 
         .modal-title {
