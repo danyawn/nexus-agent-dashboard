@@ -3,7 +3,7 @@
 import React from 'react';
 import { ArrowRight, Check } from 'lucide-react';
 import MagicBento from '@/components/ui/MagicBento';
-import TerminalUI from '@/components/ui/TerminalUI';
+import TerminalBackground from '@/components/TerminalBackground';
 
 export default function LandingPage() {
   return (
