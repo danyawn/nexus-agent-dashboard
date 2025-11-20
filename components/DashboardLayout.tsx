@@ -43,8 +43,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   const SidebarContent = () => (
     <>
-      {/* Logo/Brand - Updated to match NEXUS Theme */}
-      <div className="flex items-center gap-3 px-3 py-2 mb-6 flex-shrink-0">
+      {/* Logo/Brand - Hidden on mobile (already in header), visible on desktop */}
+      <div className="hidden md:flex items-center gap-3 px-3 py-2 mb-6 flex-shrink-0">
         <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
           <span className="text-black font-bold text-lg font-mono">N</span>
         </div>
