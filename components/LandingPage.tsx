@@ -79,22 +79,24 @@ export default function LandingPage() {
             <div className="flex items-center justify-center gap-12 md:gap-16 whitespace-nowrap animate-scroll">
               {/* Company logos */}
               {[
-                { name: 'OpenAI', logo: '🤖' },
-                { name: 'Anthropic', logo: '🧠' },
-                { name: 'Vercel', logo: '▲' },
-                { name: 'Next.js', logo: '▲' },
-                { name: 'Tailwind', logo: '◆' },
-                { name: 'OpenAI', logo: '🤖' },
-                { name: 'Anthropic', logo: '🧠' },
+                { name: 'Anthropic', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1b53ce96fe6d4f2a877e158dd5e8ecd2?format=webp&width=800' },
+                { name: 'Next.js', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F3d39c46af2744595b9b03733f97615e0?format=webp&width=800' },
+                { name: 'OpenAI', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F0bf5ea204d8e45cab433e46e261ff18c?format=webp&width=800' },
+                { name: 'Vercel', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F275249f627ed4f8a8a8111910c7e83a4?format=webp&width=800' },
+                { name: 'Tailwind', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F4c33547ec66445e394565a0dc9db538f?format=webp&width=800' },
+                { name: 'Anthropic', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1b53ce96fe6d4f2a877e158dd5e8ecd2?format=webp&width=800' },
+                { name: 'Next.js', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F3d39c46af2744595b9b03733f97615e0?format=webp&width=800' },
               ].map((company, idx) => (
                 <div
                   key={idx}
                   className="flex items-center justify-center h-16 px-8 rounded-xl border border-white/30 bg-white/[0.1] hover:bg-white/[0.15] transition-all duration-300 flex-shrink-0 backdrop-blur-sm"
                 >
-                  <div className="flex flex-col items-center gap-1">
-                    <span className="text-2xl">{company.logo}</span>
-                    <span className="text-white/80 font-semibold text-xs">{company.name}</span>
-                  </div>
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="h-12 w-auto object-contain"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
