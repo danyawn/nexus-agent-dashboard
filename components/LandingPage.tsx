@@ -130,22 +130,6 @@ export default function LandingPage() {
 
           {/* Additional Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 auto-rows-[300px]">
-            {/* Card: Live Kernel Stream */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="mb-4 flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-white">Live Kernel Stream</h3>
-                <p className="text-white/60 text-sm mt-2">Real-time system monitoring.</p>
-              </div>
-              {/* TerminalUI Component */}
-              <div className="flex-1 w-full relative overflow-hidden rounded-lg">
-                <TerminalUI
-                  tint="#0df2f2"
-                  scanlineIntensity={0.2}
-                  className="w-full h-full absolute inset-0"
-                />
-              </div>
-            </div>
-
             {/* Card: Fleet Diagnostics */}
             <div className="glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
               <div className="mb-4 flex-shrink-0">
@@ -158,6 +142,22 @@ export default function LandingPage() {
                   src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F4e9af22c844841ff858f45c8d9c9d8f1?format=webp&width=800"
                   alt="Fleet Command Dashboard"
                   className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Card: Enterprise Security */}
+            <div className="glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
+              <div className="mb-4 flex-shrink-0">
+                <h3 className="text-xl md:text-2xl font-bold text-white">Enterprise Security</h3>
+                <p className="text-white/60 text-sm mt-2">Real-time threat monitoring.</p>
+              </div>
+              {/* TerminalUI Component */}
+              <div className="flex-1 w-full relative overflow-hidden rounded-lg">
+                <TerminalUI
+                  tint="#0df2f2"
+                  scanlineIntensity={0.2}
+                  className="w-full h-full absolute inset-0"
                 />
               </div>
             </div>
