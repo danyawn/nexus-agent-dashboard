@@ -16,7 +16,7 @@ export default function AgentsPage() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-6 md:mb-8 gap-4 md:gap-0">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 flex items-center gap-2 md:gap-3">
-                <Bot className="text-[var(--primary)]" size={24} md:size={32} />
+                <Bot className="text-[var(--primary)] w-6 h-6 md:w-8 md:h-8" />
                 Fleet Command
               </h1>
               <p className="text-xs md:text-sm text-white/60 font-mono">
