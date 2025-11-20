@@ -92,7 +92,7 @@ export default function LogVault() {
   const [filterLevel, setFilterLevel] = useState<LogLevel | 'ALL'>('ALL');
   const [autoScroll, setAutoScroll] = useState(true);
   const logsContainerRef = useRef<HTMLDivElement>(null);
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>();
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const filteredLogs = logs.filter((log) => {
     const matchesLevel = filterLevel === 'ALL' || log.level === filterLevel;
