@@ -33,8 +33,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <div className="flex min-h-screen bg-[#0A0A0F]">
-      {/* Fixed Sidebar */}
-      <aside className="fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md flex flex-col p-4">
+      {/* Fixed Sidebar - Hidden on mobile, visible on md and up */}
+      <aside className="hidden md:flex fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md flex-col p-4">
         {/* Logo/Brand - Updated to match NEXUS Theme */}
         <div className="flex items-center gap-3 px-3 py-2 mb-6 flex-shrink-0">
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
