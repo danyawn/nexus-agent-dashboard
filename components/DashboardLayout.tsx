@@ -39,6 +39,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     { icon: Terminal, label: "Logs", href: "/logs" },
     { icon: ChartBar, label: "Analytics", href: "/analytics" },
     { icon: Settings, label: "Settings", href: "/settings" },
+    { icon: LayoutDashboard, label: "Landing", href: "/landing" },
   ];
 
   const SidebarContent = () => (
