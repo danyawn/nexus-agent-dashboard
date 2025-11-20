@@ -11,6 +11,8 @@ import {
   Settings,
   Menu,
   X,
+  Bell,
+  User,
 } from "lucide-react";
 
 interface DashboardLayoutProps {
