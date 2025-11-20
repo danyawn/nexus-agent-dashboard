@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import TerminalUI from '@/components/ui/TerminalUI';
+// import TerminalUI from '@/components/ui/TerminalUI';
 
 export default function TerminalBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,7 +42,7 @@ export default function TerminalBackground() {
       }}
     >
       <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-      <TerminalUI
+      {/* <TerminalUI
         scale={2.4}
         gridMul={[2, 1]}
         digitSize={1.2}
@@ -67,7 +67,7 @@ export default function TerminalBackground() {
           top: 0,
           left: 0,
         }}
-      />
+      /> */}
     </div>
   );
 }
