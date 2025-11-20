@@ -112,7 +112,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Mobile Header - Visible only on mobile (md:hidden) */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 z-30 bg-black/50 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-4">
         {/* Logo on Mobile Header */}
-        <Link href="/landing" className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
+        <Link href="/landing" className="flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-white/10 rounded transition-all duration-200">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
             <span className="text-black font-bold text-sm font-mono">N</span>
           </div>
