@@ -190,7 +190,7 @@ export default function LandingPage() {
             </div>
 
             {/* Card C: Enterprise */}
-            <div className="glass-panel rounded-2xl p-8 border border-white/10 flex flex-col hover:border-white/20 transition-colors">
+            <div className="glass-panel rounded-2xl p-8 flex flex-col hover:shadow-lg transition-all duration-300">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
                 <p className="text-white/60 text-sm">For Sovereign Entities</p>
