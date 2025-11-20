@@ -148,25 +148,25 @@ const AgentFleet: React.FC = () => {
             </div>
 
             {/* Card Body - Metrics Grid */}
-            <div className="p-5">
-              <div className="grid grid-cols-2 gap-4">
+            <div className="p-4 md:p-5">
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
                 <div className="bg-white/5 rounded-lg p-3 border border-white/5">
                   <p className="text-white/50 text-xs font-mono mb-1">KNOWLEDGE</p>
-                  <p className="text-[var(--primary)] font-mono font-bold text-lg">
+                  <p className="text-[var(--primary)] font-mono font-bold text-base md:text-lg">
                     {agent.metrics.knowledgeBase}
                   </p>
                   <p className="text-white/40 text-xs font-mono">GB</p>
                 </div>
                 <div className="bg-white/5 rounded-lg p-3 border border-white/5">
                   <p className="text-white/50 text-xs font-mono mb-1">UPTIME</p>
-                  <p className="text-[var(--primary)] font-mono font-bold text-lg">
+                  <p className="text-[var(--primary)] font-mono font-bold text-base md:text-lg">
                     {agent.metrics.uptime}
                   </p>
                   <p className="text-white/40 text-xs font-mono">HRS</p>
                 </div>
                 <div className="bg-white/5 rounded-lg p-3 border border-white/5 col-span-2">
                   <p className="text-white/50 text-xs font-mono mb-1">DAILY COST</p>
-                  <p className="text-[var(--primary)] font-mono font-bold text-lg">
+                  <p className="text-[var(--primary)] font-mono font-bold text-base md:text-lg">
                     ${agent.metrics.dailyCost.toFixed(2)}
                   </p>
                 </div>
