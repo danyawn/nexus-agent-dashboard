@@ -43,16 +43,15 @@
 
 .glass-panel {
   background: linear-gradient(135deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.05) 100%
+    rgba(150, 150, 150, 0.12) 0%,
+    rgba(120, 120, 120, 0.08) 100%
   );
-  backdrop-filter: blur(25px) saturate(200%);
-  -webkit-backdrop-filter: blur(25px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px) saturate(150%);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(200, 200, 200, 0.15);
   box-shadow:
-    0 8px 32px 0 rgba(0, 0, 0, 0.4),
-    inset 0 1px 3px 0 rgba(255, 255, 255, 0.2),
-    inset 0 0 20px 0 rgba(13, 242, 242, 0.06);
+    0 8px 32px 0 rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.1);
 }
 
 .pulse-dot {
