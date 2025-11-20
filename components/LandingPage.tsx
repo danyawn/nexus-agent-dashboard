@@ -45,18 +45,17 @@ export default function LandingPage() {
           <div className="w-full mt-12 max-w-3xl" style={{ perspective: '1200px' }}>
             {/* PLACEHOLDER: DASHBOARD PREVIEW */}
             <div
-              className="glass-panel rounded-2xl p-8 md:p-12 backdrop-blur-xl border border-white/10 hover:border-[var(--primary)]/30 transition-all duration-300"
+              className="glass-panel rounded-2xl p-2 md:p-3 backdrop-blur-xl border border-white/10 hover:border-[var(--primary)]/30 transition-all duration-300 overflow-hidden"
               style={{
                 transform: 'rotateX(5deg) rotateY(-2deg) rotateZ(1deg)',
                 transformStyle: 'preserve-3d',
               }}
             >
-              <div className="w-full h-56 md:h-72 flex items-center justify-center bg-gradient-to-br from-[var(--primary)]/15 via-[var(--neon-purple)]/10 to-transparent rounded-xl border border-[var(--primary)]/20">
-                <div className="text-center">
-                  <div className="text-xs text-white/50 font-mono mb-3 tracking-widest">[DASHBOARD_PREVIEW]</div>
-                  <div className="text-white/40 text-sm">Dashboard visualization will appear here</div>
-                </div>
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F79f48d32d69745e5b5a33333b8cc633f?format=webp&width=800"
+                alt="NEXUS Dashboard Preview"
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </div>
         </div>
