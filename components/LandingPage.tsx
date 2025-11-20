@@ -108,55 +108,16 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Bento grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-            {/* Card 1: Real-time Neural Density (col-span-2) */}
-            <div className="md:col-span-2 glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="mb-4 flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-white">Real-time Neural Density</h3>
-                <p className="text-white/60 text-sm md:text-base mt-2">Live heatmap visualization of active nodes.</p>
-              </div>
-              {/* SLOT: SWARM VISUALIZER */}
-              <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F320f4e03b56843478912129c0847c5a5?format=webp&width=800"
-                  alt="Swarm Intelligence Visualizer"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-            </div>
-
-            {/* Card 2: Live Kernel Stream (row-span-2) */}
-            <div className="md:row-span-2 glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="mb-4 flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-white">Live Kernel Stream</h3>
-                <p className="text-white/60 text-sm mt-2">Real-time system monitoring.</p>
-              </div>
-              {/* SLOT: LOG VAULT */}
-              <div className="flex-1 w-full min-h-[300px] flex items-center justify-center overflow-hidden">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1f7720494d654ccd820eb86f824b0c22?format=webp&width=800"
-                  alt="Live Kernel Stream Logs"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-            </div>
-
-            {/* Card 3: Fleet Diagnostics */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="mb-4 flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-white">Fleet Diagnostics</h3>
-                <p className="text-white/60 text-sm md:text-base mt-2">Monitor agent health and performance.</p>
-              </div>
-              {/* SLOT: AGENT FLEET */}
-              <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F4e9af22c844841ff858f45c8d9c9d8f1?format=webp&width=800"
-                  alt="Fleet Command Dashboard"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-            </div>
+          {/* MagicBento Interactive Grid */}
+          <div className="w-full flex justify-center min-h-[600px]">
+            <MagicBento
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              glowColor="13, 242, 242"
+              spotlightRadius={400}
+            />
           </div>
         </div>
       </section>
