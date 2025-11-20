@@ -7,16 +7,17 @@ import TerminalUI from '@/components/ui/TerminalUI';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden">
+    <div className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden relative">
+      {/* Fixed Terminal UI Background */}
+      <TerminalUI
+        tint="#0df2f2"
+        scanlineIntensity={0.1}
+        glitchAmount={1.2}
+        className="fixed inset-0 w-screen h-screen z-0 opacity-40 pointer-events-none"
+      />
+
       {/* HERO SECTION */}
       <section className="relative min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
-        {/* Terminal UI Background */}
-        <TerminalUI
-          tint="#0df2f2"
-          scanlineIntensity={0.1}
-          glitchAmount={1.2}
-          className="absolute inset-0 w-full h-full z-0 opacity-40 pointer-events-none"
-        />
 
         {/* Background gradient glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/10 via-transparent to-transparent pointer-events-none" />
