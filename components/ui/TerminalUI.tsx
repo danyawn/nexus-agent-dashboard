@@ -302,7 +302,7 @@ export default function TerminalUI({
     const ctn = containerRef.current;
     if (!ctn) return;
 
-    const renderer = new Renderer({ dpr });
+    const renderer = new Renderer({ dpr: effectiveDpr });
     rendererRef.current = renderer;
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 1);
@@ -408,7 +408,7 @@ export default function TerminalUI({
       timeOffsetRef.current = Math.random() * 100;
     };
   }, [
-    dpr,
+    effectiveDpr,
     pause,
     timeScale,
     scale,
