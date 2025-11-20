@@ -33,40 +33,46 @@ const MOBILE_BREAKPOINT = 768;
 
 const cardData: BentoCardProps[] = [
   {
-    color: '#060010',
+    color: '#0A0F1E',
     title: 'Neural Nodes',
     description: 'Active swarm connections',
-    label: 'Topology'
+    label: 'Topology',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F320f4e03b56843478912129c0847c5a5?format=webp&width=400'
   },
   {
-    color: '#060010',
+    color: '#0F1420',
     title: 'Latency',
     description: '< 12ms Global Response',
-    label: 'Network'
+    label: 'Network',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1f7720494d654ccd820eb86f824b0c22?format=webp&width=400'
   },
   {
-    color: '#060010',
+    color: '#0A1520',
     title: 'Encryption',
     description: 'AES-256 End-to-End',
-    label: 'Security'
+    label: 'Security',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F79f48d32d69745e5b5a33333b8cc633f?format=webp&width=400'
   },
   {
-    color: '#060010',
+    color: '#0F0F1E',
     title: 'Token Flow',
     description: '45M T/s Throughput',
-    label: 'Performance'
+    label: 'Performance',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F320f4e03b56843478912129c0847c5a5?format=webp&width=400'
   },
   {
-    color: '#060010',
+    color: '#1A0F1E',
     title: 'API Health',
     description: '99.99% Uptime Guaranteed',
-    label: 'Status'
+    label: 'Status',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F4e9af22c844841ff858f45c8d9c9d8f1?format=webp&width=400'
   },
   {
-    color: '#060010',
+    color: '#0A0F2E',
     title: 'Auto-Scale',
     description: 'Dynamic Resource Allocation',
-    label: 'Infrastructure'
+    label: 'Infrastructure',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1f7720494d654ccd820eb86f824b0c22?format=webp&width=400'
   }
 ];
 
