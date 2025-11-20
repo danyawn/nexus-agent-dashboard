@@ -9,6 +9,8 @@ import {
   Terminal,
   ChartBar,
   Settings,
+  Bell,
+  User,
 } from "lucide-react";
 
 const Sidebar: React.FC = () => {
