@@ -246,8 +246,17 @@ const DeployAgentModal: React.FC<DeployAgentModalProps> = ({
 
         .modal-footer {
           display: flex;
-          gap: 12px;
-          margin-top: 32px;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 24px;
+        }
+
+        @media (min-width: 768px) {
+          .modal-footer {
+            flex-direction: row;
+            gap: 12px;
+            margin-top: 32px;
+          }
         }
 
         .button-cancel {
