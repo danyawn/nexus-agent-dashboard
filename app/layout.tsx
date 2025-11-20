@@ -26,8 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-[#0A0A0F]" suppressHydrationWarning>
+    <html lang="en" className="bg-[#0A0A0F]">
       <body
+        suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${firaCode.variable} antialiased bg-[#0A0A0F] text-white`}
       >
         <LayoutClient>{children}</LayoutClient>
