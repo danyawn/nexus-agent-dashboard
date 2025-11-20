@@ -118,14 +118,27 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           <span className="text-white font-bold text-sm">NEXUS</span>
         </div>
 
-        {/* Hamburger Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(true)}
-          className="p-2 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-[var(--primary)]/30 transition-all"
-          aria-label="Open menu"
-        >
-          <Menu size={20} />
-        </button>
+        {/* Right Side Actions - Notification & Avatar */}
+        <div className="flex items-center gap-3">
+          {/* Notification Bell */}
+          <button className="flex items-center justify-center rounded-full h-9 w-9 bg-white/5 text-white/80 hover:text-[var(--primary)] hover:bg-[var(--primary)]/20 transition-colors">
+            <Bell size={18} />
+          </button>
+
+          {/* User Avatar */}
+          <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center border-2 border-[var(--primary)] glow-border-primary cursor-pointer">
+            <User size={16} className="text-white" />
+          </div>
+
+          {/* Hamburger Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="p-2 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:border-[var(--primary)]/30 transition-all"
+            aria-label="Open menu"
+          >
+            <Menu size={20} />
+          </button>
+        </div>
       </div>
 
       {/* Backdrop Overlay - Mobile Only */}
