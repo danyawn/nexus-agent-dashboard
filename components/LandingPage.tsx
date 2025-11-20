@@ -10,6 +10,14 @@ export default function LandingPage() {
     <div className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden">
       {/* HERO SECTION */}
       <section className="relative min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
+        {/* Terminal UI Background */}
+        <TerminalUI
+          tint="#0df2f2"
+          scanlineIntensity={0.1}
+          glitchAmount={1.2}
+          className="absolute inset-0 w-full h-full z-0 opacity-40 pointer-events-none"
+        />
+
         {/* Background gradient glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--primary)]/20 rounded-full blur-3xl pointer-events-none" />
