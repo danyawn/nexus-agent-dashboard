@@ -132,7 +132,7 @@ export default function LandingPage() {
       </section>
 
       {/* PRICING SECTION */}
-      <section className="relative w-full py-16 md:py-24 px-4 md:px-8">
+      <section className="relative z-10 w-full py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section title */}
           <div className="mb-12 md:mb-16 text-center">
