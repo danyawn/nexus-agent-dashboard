@@ -76,7 +76,7 @@ const Sidebar: React.FC = () => {
               <span>{item.label}</span>
 
               {/* Indikator Visual Tambahan jika Aktif */}
-              {isActive && (
+              {isClient && isActive && (
                 <div className="ml-auto w-1.5 h-1.5 rounded-full bg-[var(--primary)] shadow-[0_0_5px_var(--primary)] animate-pulse"></div>
               )}
             </Link>
