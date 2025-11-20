@@ -51,7 +51,7 @@ export default function LandingPage() {
           <div className="w-full mt-12 max-w-3xl" style={{ perspective: '1200px' }}>
             {/* PLACEHOLDER: DASHBOARD PREVIEW */}
             <div
-              className="glass-panel rounded-2xl p-2 md:p-3 backdrop-blur-xl border border-white/10 hover:border-[var(--primary)]/30 transition-all duration-300 overflow-hidden"
+              className="glass-panel rounded-2xl p-2 md:p-3 overflow-hidden hover:shadow-lg hover:shadow-[var(--primary)]/30 transition-all duration-300"
               style={{
                 transform: 'rotateX(5deg) rotateY(-2deg) rotateZ(1deg)',
                 transformStyle: 'preserve-3d',
