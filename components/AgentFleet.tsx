@@ -128,13 +128,13 @@ const AgentFleet: React.FC = () => {
             className="group rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300 hover:border-[var(--primary)] hover:bg-white/10 hover:shadow-[0_0_20px_rgba(13,242,242,0.2)]"
           >
             {/* Card Header */}
-            <div className="p-5 border-b border-white/5">
-              <div className="flex items-start justify-between gap-3 mb-2">
-                <div className="flex-1">
-                  <h3 className="text-white font-bold text-lg">{agent.name}</h3>
-                  <p className="text-white/60 text-sm">{agent.role}</p>
+            <div className="p-4 md:p-5 border-b border-white/5">
+              <div className="flex items-start justify-between gap-2 md:gap-3 mb-2 flex-wrap">
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-white font-bold text-base md:text-lg break-words">{agent.name}</h3>
+                  <p className="text-white/60 text-xs md:text-sm">{agent.role}</p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-shrink-0">
                   <div className={`w-2 h-2 rounded-full ${
                     agent.status === 'active'
                       ? 'bg-[var(--emerald)] pulse-dot'
