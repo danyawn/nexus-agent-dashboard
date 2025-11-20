@@ -215,7 +215,7 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="relative z-10 w-full border-t border-white/10 bg-white/[0.02] py-12 md:py-16 px-4 md:px-8">
+      <footer className="relative z-10 w-full py-12 md:py-16 px-4 md:px-8 glass-panel rounded-t-3xl border-t border-white/20 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 md:mb-12">
             {/* Column 1: Product */}
