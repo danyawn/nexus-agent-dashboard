@@ -8,27 +8,8 @@ import TerminalBackground from '@/components/TerminalBackground';
 export default function LandingPage() {
   return (
     <div className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden relative">
-      {/* Fixed Terminal UI Background */}
-      <TerminalUI
-        scale={1.5}
-        gridMul={[2, 1]}
-        digitSize={1.2}
-        timeScale={1}
-        pause={false}
-        scanlineIntensity={1}
-        glitchAmount={1}
-        flickerAmount={1}
-        noiseAmp={1}
-        chromaticAberration={0}
-        dither={0}
-        curvature={0}
-        tint="#0df2f2"
-        mouseReact={true}
-        mouseStrength={0.5}
-        pageLoadAnimation={false}
-        brightness={0.6}
-        className="fixed inset-0 w-screen h-screen z-0 pointer-events-none"
-      />
+      {/* Terminal Background */}
+      <TerminalBackground />
 
       {/* HERO SECTION */}
       <section className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
