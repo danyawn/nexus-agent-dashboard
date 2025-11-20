@@ -258,7 +258,7 @@ export default function TerminalUI({
   tint = '#ffffff',
   mouseReact = true,
   mouseStrength = 0.2,
-  dpr = Math.min(window.devicePixelRatio || 1, 2),
+  dpr,
   pageLoadAnimation = true,
   brightness = 1,
   className,
@@ -275,6 +275,15 @@ export default function TerminalUI({
   const loadAnimationStartRef = useRef<number>(0);
   const [timeOffset] = useState(() => Math.random() * 100);
   const timeOffsetRef = useRef<number>(timeOffset);
+  const [devicePixelRatio, setDevicePixelRatio] = useState(1);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setDevicePixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    }
+  }, []);
+
+  const effectiveDpr = dpr ?? devicePixelRatio;
 
   const tintVec = useMemo(() => hexToRgb(tint), [tint]);
 
@@ -293,7 +302,7 @@ export default function TerminalUI({
     const ctn = containerRef.current;
     if (!ctn) return;
 
-    const renderer = new Renderer({ dpr });
+    const renderer = new Renderer({ dpr: effectiveDpr });
     rendererRef.current = renderer;
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 1);
@@ -399,7 +408,7 @@ export default function TerminalUI({
       timeOffsetRef.current = Math.random() * 100;
     };
   }, [
-    dpr,
+    effectiveDpr,
     pause,
     timeScale,
     scale,

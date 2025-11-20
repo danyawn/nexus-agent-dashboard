@@ -1,51 +1,108 @@
 'use client';
 
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { ArrowRight, Check } from 'lucide-react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import MagicBento from '@/components/ui/MagicBento';
+import TerminalBackground from '@/components/TerminalBackground';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function LandingPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray<HTMLElement>('.reveal-text').forEach((element) => {
+        gsap.fromTo(
+          element,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: element,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray<HTMLElement>('.reveal-card').forEach((element, index) => {
+        gsap.fromTo(
+          element,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: index * 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: element,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
   return (
-    <div className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden">
+    <div ref={containerRef} className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden relative">
+      {/* Terminal Background */}
+      <TerminalBackground />
+
       {/* HERO SECTION */}
-      <section className="relative min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
-        {/* Background gradient glow */}
+      <section className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
+
+        {/* Background gradient overlay for text contrast */}
+        <div className="absolute top-0 left-0 right-0 h-[150vh] bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--primary)]/20 rounded-full blur-3xl pointer-events-none" />
 
         {/* Hero content */}
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center space-y-8">
           {/* Status badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--primary)]/50 bg-white/5 backdrop-blur-md hover:border-[var(--primary)] transition-colors">
-            <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse" />
-            <span className="text-sm font-medium text-white/80">v2.4.0 SYSTEM ONLINE</span>
+          <div className="reveal-text inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/50 bg-white/10 backdrop-blur-md hover:border-cyan-400 transition-all duration-300">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-sm font-semibold text-cyan-400">v2.4.0 SYSTEM ONLINE</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center leading-tight bg-gradient-to-r from-[var(--primary)] to-[var(--neon-purple)] bg-clip-text text-transparent">
+          <h1 className="reveal-text text-6xl md:text-8xl font-black text-center leading-tight tracking-tighter text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Orchestrate the Autonomous Future
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/70 text-center max-w-2xl leading-relaxed">
+          <p className="reveal-text text-lg md:text-xl text-white/90 text-center max-w-2xl leading-relaxed font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
             The first command center designed for scaling AI agent swarms. Monitor, debug, and deploy in real-time.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="group px-8 py-3 bg-[var(--primary)] text-black font-semibold rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 flex items-center justify-center gap-2">
+          <div className="reveal-text flex flex-col sm:flex-row gap-4 pt-8">
+            <button onClick={() => router.push('/')} className="group px-8 py-4 bg-[var(--primary)] text-black font-bold text-lg rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-cyan-400/30">
               Enter Console
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-3 border border-white/30 text-white font-semibold rounded-lg hover:border-[var(--primary)]/50 hover:bg-white/5 transition-all duration-200">
+            <button className="px-8 py-4 border-2 border-white/50 text-white font-bold text-lg rounded-lg hover:border-[var(--primary)]/70 hover:bg-white/10 transition-all duration-200">
               Read Docs
             </button>
           </div>
 
           {/* 3D Tilted container placeholder */}
-          <div className="w-full mt-12 max-w-3xl" style={{ perspective: '1200px' }}>
+          <div className="w-full mt-12 max-w-2xl px-4" style={{ perspective: '1200px' }}>
             {/* PLACEHOLDER: DASHBOARD PREVIEW */}
             <div
-              className="glass-panel rounded-2xl p-2 md:p-3 backdrop-blur-xl border border-white/10 hover:border-[var(--primary)]/30 transition-all duration-300 overflow-hidden"
+              className="glass-panel rounded-2xl p-2 md:p-3 overflow-hidden hover:shadow-lg hover:shadow-[var(--primary)]/30 transition-all duration-300"
               style={{
                 transform: 'rotateX(5deg) rotateY(-2deg) rotateZ(1deg)',
                 transformStyle: 'preserve-3d',
@@ -62,30 +119,35 @@ export default function LandingPage() {
       </section>
 
       {/* TRUSTED BY SECTION */}
-      <section className="relative w-full py-12 md:py-16 px-4 border-y border-white/10 bg-white/[0.02]">
+      <section className="relative z-10 w-full py-12 md:py-16 px-4 border-y border-white/10 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-sm md:text-base text-white/50 font-mono tracking-widest mb-8">
+          <p className="text-center text-base md:text-lg font-bold tracking-widest mb-12 text-white">
             POWERING NEXT-GEN INFRASTRUCTURE
           </p>
-          
+
           {/* Marquee container */}
           <div className="overflow-hidden">
-            <div className="flex items-center justify-center gap-8 md:gap-12 whitespace-nowrap animate-scroll">
-              {/* Logo placeholders */}
+            <div className="flex items-center justify-center gap-12 md:gap-16 whitespace-nowrap animate-scroll">
+              {/* Company logos */}
               {[
-                { name: 'OpenAI', initials: 'OAI' },
-                { name: 'Anthropic', initials: 'ANT' },
-                { name: 'Vercel', initials: 'VRL' },
-                { name: 'Next.js', initials: 'NXT' },
-                { name: 'Tailwind', initials: 'TWL' },
-                { name: 'OpenAI', initials: 'OAI' },
-                { name: 'Anthropic', initials: 'ANT' },
+                { name: 'Anthropic', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1b53ce96fe6d4f2a877e158dd5e8ecd2?format=webp&width=800' },
+                { name: 'Next.js', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F3d39c46af2744595b9b03733f97615e0?format=webp&width=800' },
+                { name: 'OpenAI', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F0bf5ea204d8e45cab433e46e261ff18c?format=webp&width=800' },
+                { name: 'Vercel', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F275249f627ed4f8a8a8111910c7e83a4?format=webp&width=800' },
+                { name: 'Tailwind', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F4c33547ec66445e394565a0dc9db538f?format=webp&width=800' },
+                { name: 'Anthropic', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1b53ce96fe6d4f2a877e158dd5e8ecd2?format=webp&width=800' },
+                { name: 'Next.js', logo: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F3d39c46af2744595b9b03733f97615e0?format=webp&width=800' },
               ].map((company, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-center h-12 px-6 rounded-lg border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors flex-shrink-0"
+                  className="flex items-center justify-center h-16 px-8 rounded-xl border border-white/30 bg-white/[0.1] hover:bg-white/[0.15] transition-all duration-300 flex-shrink-0 backdrop-blur-sm"
                 >
-                  <span className="text-white/60 font-semibold text-sm">{company.name}</span>
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="h-12 w-auto object-contain"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
@@ -94,80 +156,41 @@ export default function LandingPage() {
       </section>
 
       {/* FEATURE SHOWCASE SECTION */}
-      <section className="relative w-full py-16 md:py-24 px-4 md:px-8">
+      <section className="relative z-10 w-full py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section title */}
           <div className="mb-12 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Powered by <span className="text-[var(--primary)]">Fusion Engine</span>
+            <h2 className="reveal-text text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] tracking-tight">
+              Powered by <span className="text-cyan-400">Fusion Engine</span>
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="reveal-text text-white/90 max-w-2xl mx-auto font-semibold text-lg drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
               Experience the next generation of AI command and control
             </p>
           </div>
 
-          {/* Bento grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
-            {/* Card 1: Real-time Neural Density (col-span-2) */}
-            <div className="md:col-span-2 glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="mb-4 flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-white">Real-time Neural Density</h3>
-                <p className="text-white/60 text-sm md:text-base mt-2">Live heatmap visualization of active nodes.</p>
-              </div>
-              {/* SLOT: SWARM VISUALIZER */}
-              <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F320f4e03b56843478912129c0847c5a5?format=webp&width=800"
-                  alt="Swarm Intelligence Visualizer"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-            </div>
-
-            {/* Card 2: Live Kernel Stream (row-span-2) */}
-            <div className="md:row-span-2 glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="mb-4 flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-white">Live Kernel Stream</h3>
-                <p className="text-white/60 text-sm mt-2">Real-time system monitoring.</p>
-              </div>
-              {/* SLOT: LOG VAULT */}
-              <div className="flex-1 w-full min-h-[300px] flex items-center justify-center overflow-hidden">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1f7720494d654ccd820eb86f824b0c22?format=webp&width=800"
-                  alt="Live Kernel Stream Logs"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-            </div>
-
-            {/* Card 3: Fleet Diagnostics */}
-            <div className="glass-panel rounded-2xl p-6 md:p-8 flex flex-col border border-white/10 hover:border-[var(--primary)]/30 transition-colors">
-              <div className="mb-4 flex-shrink-0">
-                <h3 className="text-xl md:text-2xl font-bold text-white">Fleet Diagnostics</h3>
-                <p className="text-white/60 text-sm md:text-base mt-2">Monitor agent health and performance.</p>
-              </div>
-              {/* SLOT: AGENT FLEET */}
-              <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F4e9af22c844841ff858f45c8d9c9d8f1?format=webp&width=800"
-                  alt="Fleet Command Dashboard"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-            </div>
+          {/* MagicBento Interactive Grid */}
+          <div className="w-full flex justify-center min-h-[600px]">
+            <MagicBento
+              textAutoHide={true}
+              enableStars={true}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              glowColor="13, 242, 242"
+              spotlightRadius={400}
+            />
           </div>
         </div>
       </section>
 
       {/* PRICING SECTION */}
-      <section className="relative w-full py-16 md:py-24 px-4 md:px-8">
+      <section className="relative z-10 w-full py-16 md:py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Section title */}
           <div className="mb-12 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="reveal-text text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] tracking-tight">
               Simple, Transparent Pricing
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="reveal-text text-white/90 max-w-2xl mx-auto font-semibold text-lg drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
               Choose the perfect plan for your AI infrastructure
             </p>
           </div>
@@ -175,15 +198,15 @@ export default function LandingPage() {
           {/* Pricing cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {/* Card A: Starter */}
-            <div className="glass-panel rounded-2xl p-8 border border-white/10 flex flex-col hover:border-white/20 transition-colors">
+            <div className="reveal-card glass-panel rounded-2xl p-8 flex flex-col hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
-                <p className="text-white/60 text-sm">For Indie Hackers</p>
+                <p className="text-white/70 text-sm font-medium">For Indie Hackers</p>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">Free</span>
+                <span className="text-5xl font-bold text-white">Free</span>
               </div>
-              <button className="w-full py-3 border border-white/20 text-white font-semibold rounded-lg hover:border-white/40 hover:bg-white/5 transition-all duration-200 mb-8">
+              <button className="w-full py-3 border-2 border-white/40 text-white font-semibold rounded-lg hover:border-white/80 hover:bg-white/10 transition-all duration-200 mb-8">
                 Get Started
               </button>
               <div className="space-y-4 flex-1">
@@ -197,19 +220,19 @@ export default function LandingPage() {
             </div>
 
             {/* Card B: Syndicate (Most Popular) */}
-            <div className="glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:border-[var(--primary)]/80 transition-colors">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[var(--primary)] text-black text-xs font-bold rounded-full">
+            <div className="reveal-card glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:shadow-2xl hover:shadow-[var(--primary)]/60 hover:-translate-y-2 transition-all duration-300 md:scale-105 md:mb-8">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-cyan-400 text-black text-xs font-bold rounded-full shadow-lg shadow-[var(--primary)]/50">
                 MOST POPULAR
               </div>
               <div className="mb-6 pt-2">
                 <h3 className="text-2xl font-bold text-white mb-2">Syndicate</h3>
-                <p className="text-white/60 text-sm">For AI Startups</p>
+                <p className="text-white/70 text-sm font-medium">For AI Startups</p>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">$49</span>
-                <span className="text-white/60 text-sm">/month</span>
+                <span className="text-5xl font-bold text-white">$49</span>
+                <span className="text-white/70 text-sm font-medium">/month</span>
               </div>
-              <button className="w-full py-3 bg-[var(--primary)] text-black font-semibold rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 mb-8">
+              <button className="w-full py-3 bg-gradient-to-r from-[var(--primary)] to-cyan-400 text-black font-semibold rounded-lg hover:shadow-lg hover:shadow-[var(--primary)]/50 transition-all duration-200 mb-8">
                 Start Trial
               </button>
               <div className="space-y-4 flex-1">
@@ -223,15 +246,15 @@ export default function LandingPage() {
             </div>
 
             {/* Card C: Enterprise */}
-            <div className="glass-panel rounded-2xl p-8 border border-white/10 flex flex-col hover:border-white/20 transition-colors">
+            <div className="reveal-card glass-panel rounded-2xl p-8 flex flex-col hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
-                <p className="text-white/60 text-sm">For Sovereign Entities</p>
+                <p className="text-white/70 text-sm font-medium">For Sovereign Entities</p>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">Custom</span>
+                <span className="text-5xl font-bold text-white">Custom</span>
               </div>
-              <button className="w-full py-3 border border-white/20 text-white font-semibold rounded-lg hover:border-white/40 hover:bg-white/5 transition-all duration-200 mb-8">
+              <button className="w-full py-3 border-2 border-white/40 text-white font-semibold rounded-lg hover:border-white/80 hover:bg-white/10 transition-all duration-200 mb-8">
                 Contact Sales
               </button>
               <div className="space-y-4 flex-1">
@@ -248,7 +271,7 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="relative w-full border-t border-white/10 bg-white/[0.02] py-12 md:py-16 px-4 md:px-8">
+      <footer className="relative z-10 w-full py-12 md:py-16 px-4 md:px-8 glass-panel rounded-t-3xl border-t border-white/20 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 md:mb-12">
             {/* Column 1: Product */}

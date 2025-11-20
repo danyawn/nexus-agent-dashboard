@@ -39,13 +39,14 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     { icon: Terminal, label: "Logs", href: "/logs" },
     { icon: ChartBar, label: "Analytics", href: "/analytics" },
     { icon: Settings, label: "Settings", href: "/settings" },
+    { icon: LayoutDashboard, label: "Landing", href: "/landing" },
   ];
 
   const SidebarContent = () => (
     <>
       {/* Logo/Brand - Hidden on mobile (already in header), visible on desktop */}
-      <div className="hidden md:flex items-center gap-3 px-3 py-2 mb-6 flex-shrink-0">
-        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
+      <Link href="/landing" className="hidden md:flex glass-panel items-center gap-3 px-4 py-3 mb-6 flex-shrink-0 rounded-xl hover:border-[var(--primary)]/40 transition-all duration-200 group cursor-pointer">
+        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)] group-hover:shadow-[0_0_25px_rgba(13,242,242,0.5)] transition-shadow">
           <span className="text-black font-bold text-lg font-mono">N</span>
         </div>
         <div>
@@ -56,7 +57,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             Command Center
           </p>
         </div>
-      </div>
+      </Link>
 
       {/* Navigation */}
       <nav className="flex-1 flex flex-col gap-2 mt-6 overflow-y-auto pr-2 min-h-0">
@@ -111,12 +112,12 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Mobile Header - Visible only on mobile (md:hidden) */}
       <div className="md:hidden fixed top-0 left-0 right-0 h-16 z-30 bg-black/50 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-4">
         {/* Logo on Mobile Header */}
-        <div className="flex items-center gap-2">
+        <Link href="/landing" className="flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-white/10 rounded transition-all duration-200">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
             <span className="text-black font-bold text-sm font-mono">N</span>
           </div>
           <span className="text-white font-bold text-sm">NEXUS</span>
-        </div>
+        </Link>
 
         {/* Right Side Actions - Notification & Avatar */}
         <div className="flex items-center gap-3">

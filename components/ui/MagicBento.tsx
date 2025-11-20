@@ -9,6 +9,7 @@ export interface BentoCardProps {
   label?: string;
   textAutoHide?: boolean;
   disableAnimations?: boolean;
+  image?: string;
 }
 
 export interface BentoProps {
@@ -32,40 +33,46 @@ const MOBILE_BREAKPOINT = 768;
 
 const cardData: BentoCardProps[] = [
   {
-    color: '#060010',
-    title: 'Analytics',
-    description: 'Track user behavior',
-    label: 'Insights'
+    color: '#0A0F1E',
+    title: 'Neural Nodes',
+    description: 'Active swarm connections',
+    label: 'Topology',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F320f4e03b56843478912129c0847c5a5?format=webp&width=400'
   },
   {
-    color: '#060010',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    label: 'Overview'
+    color: '#0F1420',
+    title: 'Latency',
+    description: '< 12ms Global Response',
+    label: 'Network',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1f7720494d654ccd820eb86f824b0c22?format=webp&width=400'
   },
   {
-    color: '#060010',
-    title: 'Collaboration',
-    description: 'Work together seamlessly',
-    label: 'Teamwork'
+    color: '#0A1520',
+    title: 'Encryption',
+    description: 'AES-256 End-to-End',
+    label: 'Security',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F79f48d32d69745e5b5a33333b8cc633f?format=webp&width=400'
   },
   {
-    color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Efficiency'
+    color: '#0F0F1E',
+    title: 'Token Flow',
+    description: '45M T/s Throughput',
+    label: 'Performance',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F320f4e03b56843478912129c0847c5a5?format=webp&width=400'
   },
   {
-    color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity'
+    color: '#1A0F1E',
+    title: 'API Health',
+    description: '99.99% Uptime Guaranteed',
+    label: 'Status',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F4e9af22c844841ff858f45c8d9c9d8f1?format=webp&width=400'
   },
   {
-    color: '#060010',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-    label: 'Protection'
+    color: '#0A0F2E',
+    title: 'Auto-Scale',
+    description: 'Dynamic Resource Allocation',
+    label: 'Infrastructure',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1f7720494d654ccd820eb86f824b0c22?format=webp&width=400'
   }
 ];
 
@@ -567,6 +574,11 @@ const MagicBento: React.FC<BentoProps> = ({
                 <div className="magic-bento-card__header">
                   <div className="magic-bento-card__label">{card.label}</div>
                 </div>
+                {card.image && (
+                  <div className="magic-bento-card__image-wrapper">
+                    <img src={card.image} alt={card.title} className="magic-bento-card__image" />
+                  </div>
+                )}
                 <div className="magic-bento-card__content">
                   <h2 className="magic-bento-card__title">{card.title}</h2>
                   <p className="magic-bento-card__description">{card.description}</p>
@@ -691,6 +703,11 @@ const MagicBento: React.FC<BentoProps> = ({
               <div className="magic-bento-card__header">
                 <div className="magic-bento-card__label">{card.label}</div>
               </div>
+              {card.image && (
+                <div className="magic-bento-card__image-wrapper">
+                  <img src={card.image} alt={card.title} className="magic-bento-card__image" />
+                </div>
+              )}
               <div className="magic-bento-card__content">
                 <h2 className="magic-bento-card__title">{card.title}</h2>
                 <p className="magic-bento-card__description">{card.description}</p>
