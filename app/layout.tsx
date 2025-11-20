@@ -1,6 +1,9 @@
+'use client';
+
 import type { Metadata } from "next";
 import { Space_Grotesk, Fira_Code } from "next/font/google";
 import "./globals.css";
+import SplashScreen from "@/components/SplashScreen";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -29,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${firaCode.variable} antialiased bg-[#0A0A0F] text-white`}
       >
+        <SplashScreen />
         {children}
       </body>
     </html>
