@@ -173,12 +173,12 @@ const AgentFleet: React.FC = () => {
               </div>
             </div>
 
-            {/* Card Footer */}
-            <div className="p-5 border-t border-white/5 flex gap-3">
-              <button className="flex-1 px-3 py-2 rounded-lg bg-transparent border border-white/20 text-white/70 text-sm font-bold hover:border-white/40 hover:text-white transition-all duration-200">
+            {/* Card Footer - Responsive button layout */}
+            <div className="p-4 md:p-5 border-t border-white/5 flex flex-col gap-2 lg:flex-row lg:gap-3">
+              <button className="w-full px-3 py-2 rounded-lg bg-transparent border border-white/20 text-white/70 text-xs md:text-sm font-bold hover:border-white/40 hover:text-white transition-all duration-200">
                 Diagnostics
               </button>
-              <button className="flex-1 px-3 py-2 rounded-lg bg-transparent border border-red-500/50 text-red-500/70 text-sm font-bold hover:border-red-500 hover:text-red-500 transition-all duration-200">
+              <button className="w-full px-3 py-2 rounded-lg bg-transparent border border-red-500/50 text-red-500/70 text-xs md:text-sm font-bold hover:border-red-500 hover:text-red-500 transition-all duration-200">
                 Reboot System
               </button>
             </div>
