@@ -89,7 +89,7 @@ export default function LandingPage() {
 
           {/* CTA Buttons */}
           <div className="reveal-text flex flex-col sm:flex-row gap-4 pt-8">
-            <button className="group px-8 py-4 bg-[var(--primary)] text-black font-bold text-lg rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-cyan-400/30">
+            <button onClick={() => router.push('/')} className="group px-8 py-4 bg-[var(--primary)] text-black font-bold text-lg rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-cyan-400/30">
               Enter Console
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
