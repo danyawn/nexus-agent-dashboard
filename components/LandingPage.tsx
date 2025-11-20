@@ -131,10 +131,10 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           {/* Section title */}
           <div className="mb-12 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-[var(--primary)] bg-clip-text text-transparent">
               Simple, Transparent Pricing
             </h2>
-            <p className="text-white/60 max-w-2xl mx-auto">
+            <p className="text-white/70 max-w-2xl mx-auto font-medium">
               Choose the perfect plan for your AI infrastructure
             </p>
           </div>
