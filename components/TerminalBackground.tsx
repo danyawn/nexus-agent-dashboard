@@ -42,7 +42,7 @@ export default function TerminalBackground() {
       }}
     >
       <TerminalUI
-        scale={1.5}
+        scale={1.0}
         gridMul={[2, 1]}
         digitSize={1.2}
         timeScale={0.8}
