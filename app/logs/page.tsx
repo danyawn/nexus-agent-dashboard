@@ -12,10 +12,10 @@ export default function LogsPage() {
         <TopBar />
 
         {/* Full Height Container for Logs */}
-        <div className="flex-1 p-6 overflow-hidden flex flex-col">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-            <h2 className="text-white font-mono text-sm tracking-widest">
+        <div className="flex-1 p-4 md:p-6 overflow-hidden flex flex-col">
+          <div className="flex items-center gap-2 md:gap-3 mb-4">
+            <div className="w-2 md:w-3 h-2 md:h-3 bg-red-500 rounded-full animate-pulse"></div>
+            <h2 className="text-white font-mono text-xs md:text-sm tracking-widest">
               LIVE KERNEL STREAM // PORT 8080
             </h2>
           </div>
