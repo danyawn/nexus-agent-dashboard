@@ -97,7 +97,7 @@ export default function LandingPage() {
           </div>
 
           {/* 3D Tilted container placeholder */}
-          <div className="w-full mt-12 max-w-3xl" style={{ perspective: '1200px' }}>
+          <div className="w-full mt-12 max-w-2xl px-4" style={{ perspective: '1200px' }}>
             {/* PLACEHOLDER: DASHBOARD PREVIEW */}
             <div
               className="glass-panel rounded-2xl p-2 md:p-3 overflow-hidden hover:shadow-lg hover:shadow-[var(--primary)]/30 transition-all duration-300"
