@@ -1,11 +1,59 @@
 'use client';
 
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { ArrowRight, Check } from 'lucide-react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import MagicBento from '@/components/ui/MagicBento';
 import TerminalBackground from '@/components/TerminalBackground';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function LandingPage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray<HTMLElement>('.reveal-text').forEach((element) => {
+        gsap.fromTo(
+          element,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: element,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      });
+
+      gsap.utils.toArray<HTMLElement>('.reveal-card').forEach((element, index) => {
+        gsap.fromTo(
+          element,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: index * 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: element,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
   return (
     <div className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden relative">
       {/* Terminal Background */}
