@@ -1,6 +1,7 @@
 'use client';
 
 import React, { ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import SplashScreen from '@/components/SplashScreen';
 import DashboardLayout from '@/components/DashboardLayout';
 
@@ -9,10 +10,13 @@ interface LayoutClientProps {
 }
 
 export default function LayoutClient({ children }: LayoutClientProps) {
+  const pathname = usePathname();
+  const isLandingPage = pathname === '/landing';
+
   return (
     <>
-      <SplashScreen />
-      <DashboardLayout>{children}</DashboardLayout>
+      {!isLandingPage && <SplashScreen />}
+      {isLandingPage ? children : <DashboardLayout>{children}</DashboardLayout>}
     </>
   );
 }
