@@ -30,6 +30,8 @@ const Sidebar: React.FC = () => {
     // TARGET: Mengarah ke halaman Analytics yang baru kita siapkan
     { icon: ChartBar, label: "Analytics", href: "/analytics" },
     { icon: Settings, label: "Settings", href: "/settings" },
+    // Landing page
+    { icon: LayoutDashboard, label: "Landing", href: "/landing" },
   ];
 
   return (
