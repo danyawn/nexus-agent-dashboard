@@ -44,8 +44,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const SidebarContent = () => (
     <>
       {/* Logo/Brand - Hidden on mobile (already in header), visible on desktop */}
-      <div className="hidden md:flex items-center gap-3 px-3 py-2 mb-6 flex-shrink-0">
-        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
+      <Link href="/landing" className="hidden md:flex glass-panel items-center gap-3 px-4 py-3 mb-6 flex-shrink-0 rounded-xl hover:border-[var(--primary)]/40 transition-all duration-200 group cursor-pointer">
+        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)] group-hover:shadow-[0_0_25px_rgba(13,242,242,0.5)] transition-shadow">
           <span className="text-black font-bold text-lg font-mono">N</span>
         </div>
         <div>
@@ -56,7 +56,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
             Command Center
           </p>
         </div>
-      </div>
+      </Link>
 
       {/* Navigation */}
       <nav className="flex-1 flex flex-col gap-2 mt-6 overflow-y-auto pr-2 min-h-0">
