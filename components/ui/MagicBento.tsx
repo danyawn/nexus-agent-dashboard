@@ -33,39 +33,39 @@ const MOBILE_BREAKPOINT = 768;
 const cardData: BentoCardProps[] = [
   {
     color: '#060010',
-    title: 'Analytics',
-    description: 'Track user behavior',
-    label: 'Insights'
+    title: 'Neural Nodes',
+    description: 'Active swarm connections',
+    label: 'Topology'
   },
   {
     color: '#060010',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    label: 'Overview'
+    title: 'Latency',
+    description: '< 12ms Global Response',
+    label: 'Network'
   },
   {
     color: '#060010',
-    title: 'Collaboration',
-    description: 'Work together seamlessly',
-    label: 'Teamwork'
+    title: 'Encryption',
+    description: 'AES-256 End-to-End',
+    label: 'Security'
   },
   {
     color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Efficiency'
+    title: 'Token Flow',
+    description: '45M T/s Throughput',
+    label: 'Performance'
   },
   {
     color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity'
+    title: 'API Health',
+    description: '99.99% Uptime Guaranteed',
+    label: 'Status'
   },
   {
     color: '#060010',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-    label: 'Protection'
+    title: 'Auto-Scale',
+    description: 'Dynamic Resource Allocation',
+    label: 'Infrastructure'
   }
 ];
 
