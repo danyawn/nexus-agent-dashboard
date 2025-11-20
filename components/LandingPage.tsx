@@ -73,7 +73,7 @@ export default function LandingPage() {
       </section>
 
       {/* TRUSTED BY SECTION */}
-      <section className="relative w-full py-12 md:py-16 px-4 border-y border-white/10 bg-white/[0.02]">
+      <section className="relative z-10 w-full py-12 md:py-16 px-4 border-y border-white/10 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-sm md:text-base text-white/50 font-mono tracking-widest mb-8">
             POWERING NEXT-GEN INFRASTRUCTURE
