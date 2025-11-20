@@ -31,10 +31,7 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div
-      className="fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md flex flex-col p-4"
-      suppressHydrationWarning
-    >
+    <div className="fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md flex flex-col p-4">
       {/* Logo/Brand - Updated to match NEXUS Theme */}
       <div className="flex items-center gap-3 px-3 py-2 mb-6 flex-shrink-0">
         <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
