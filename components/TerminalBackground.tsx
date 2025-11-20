@@ -41,6 +41,7 @@ export default function TerminalBackground() {
         overflow: 'hidden',
       }}
     >
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
       <TerminalUI
         scale={2.4}
         gridMul={[2, 1]}
