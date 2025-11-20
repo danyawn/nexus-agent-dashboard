@@ -70,7 +70,7 @@ export default function LandingPage() {
       {/* TRUSTED BY SECTION */}
       <section className="relative z-10 w-full py-12 md:py-16 px-4 border-y border-white/10 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-base md:text-lg font-bold tracking-widest mb-12 bg-gradient-to-r from-white via-[var(--primary)] to-white bg-clip-text text-transparent">
+          <p className="text-center text-base md:text-lg font-bold tracking-widest mb-12 text-white">
             POWERING NEXT-GEN INFRASTRUCTURE
           </p>
 
@@ -79,24 +79,22 @@ export default function LandingPage() {
             <div className="flex items-center justify-center gap-12 md:gap-16 whitespace-nowrap animate-scroll">
               {/* Company logos */}
               {[
-                { name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png' },
-                { name: 'Anthropic', logo: 'https://www.anthropic.com/_next/static/media/anthropic-logo.73f92e72.svg' },
-                { name: 'Vercel', logo: 'https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png' },
-                { name: 'Next.js', logo: 'https://asset.brandfetch.io/idVxahf-mM/id4nKjVzqm.svg' },
-                { name: 'Tailwind', logo: 'https://www.tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc.svg' },
-                { name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png' },
-                { name: 'Anthropic', logo: 'https://www.anthropic.com/_next/static/media/anthropic-logo.73f92e72.svg' },
+                { name: 'OpenAI', logo: '🤖' },
+                { name: 'Anthropic', logo: '🧠' },
+                { name: 'Vercel', logo: '▲' },
+                { name: 'Next.js', logo: '▲' },
+                { name: 'Tailwind', logo: '◆' },
+                { name: 'OpenAI', logo: '🤖' },
+                { name: 'Anthropic', logo: '🧠' },
               ].map((company, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-center h-16 px-8 rounded-xl border border-white/20 bg-white/[0.08] hover:bg-white/[0.12] transition-all duration-300 flex-shrink-0 backdrop-blur-sm"
+                  className="flex items-center justify-center h-16 px-8 rounded-xl border border-white/30 bg-white/[0.1] hover:bg-white/[0.15] transition-all duration-300 flex-shrink-0 backdrop-blur-sm"
                 >
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="h-10 w-auto object-contain filter brightness-0 invert"
-                    loading="lazy"
-                  />
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-2xl">{company.logo}</span>
+                    <span className="text-white/80 font-semibold text-xs">{company.name}</span>
+                  </div>
                 </div>
               ))}
             </div>
