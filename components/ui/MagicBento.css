@@ -54,10 +54,10 @@
 .magic-bento-card:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 12px 50px 0 rgba(0, 0, 0, 0.8),
-    0 0 50px 0 rgba(167, 239, 158, 0.25),
-    inset 0 1px 2px 0 rgba(255, 255, 255, 0.25),
-    inset 0 0 20px 0 rgba(167, 239, 158, 0.1);
+    0 12px 60px 0 rgba(0, 0, 0, 0.9),
+    0 0 60px 0 rgba(167, 239, 158, 0.3),
+    inset 0 1px 3px 0 rgba(255, 255, 255, 0.3),
+    inset 0 0 30px 0 rgba(167, 239, 158, 0.15);
 }
 
 .magic-bento-card__header,
