@@ -115,17 +115,30 @@ const DeployAgentModal: React.FC<DeployAgentModalProps> = ({
         }
 
         .form-group {
-          margin-bottom: 20px;
+          margin-bottom: 16px;
+        }
+
+        @media (min-width: 768px) {
+          .form-group {
+            margin-bottom: 20px;
+          }
         }
 
         .form-label {
           display: block;
           color: white;
           font-weight: 600;
-          font-size: 14px;
-          margin-bottom: 8px;
+          font-size: 12px;
+          margin-bottom: 6px;
           text-transform: uppercase;
           letter-spacing: 0.5px;
+        }
+
+        @media (min-width: 768px) {
+          .form-label {
+            font-size: 14px;
+            margin-bottom: 8px;
+          }
         }
 
         .agent-name-input {
