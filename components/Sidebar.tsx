@@ -26,10 +26,9 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md">
-      <div className="flex flex-col h-full p-4">
+    <div className="fixed left-0 top-0 h-screen w-64 bg-black/30 border-r border-white/10 z-20 backdrop-blur-md flex flex-col p-4">
         {/* Logo/Brand - Updated to match NEXUS Theme */}
-        <div className="flex items-center gap-3 px-3 py-2 mb-6">
+        <div className="flex items-center gap-3 px-3 py-2 mb-6 flex-shrink-0">
           <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--neon-purple)] flex items-center justify-center shadow-[0_0_15px_rgba(13,242,242,0.3)]">
             <span className="text-black font-bold text-lg font-mono">N</span>
           </div>
@@ -44,7 +43,7 @@ const Sidebar: React.FC = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 flex flex-col gap-2 mt-6 overflow-y-auto pr-2">
+        <nav className="flex-1 flex flex-col gap-2 mt-6 overflow-y-auto pr-2 min-h-0">
           {menuItems.map((item, index) => {
             const Icon = item.icon;
             // Logika Aktif: Cek apakah URL saat ini sama dengan href menu
@@ -75,7 +74,7 @@ const Sidebar: React.FC = () => {
         </nav>
 
         {/* Bottom Status */}
-        <div className="mt-auto pt-4 border-t border-white/10">
+        <div className="pt-4 border-t border-white/10 flex-shrink-0">
           <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/5 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
@@ -84,7 +83,6 @@ const Sidebar: React.FC = () => {
             <span className="text-[10px] text-white/30 font-mono">v2.4.0</span>
           </div>
         </div>
-      </div>
     </div>
   );
 };
