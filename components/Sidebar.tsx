@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link"; // Import Link untuk navigasi
 import { usePathname } from "next/navigation"; // Import hook untuk deteksi URL aktif
 import {
@@ -13,6 +13,11 @@ import {
 
 const Sidebar: React.FC = () => {
   const pathname = usePathname(); // Ambil URL saat ini
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const menuItems = [
     // href: '/' mengarah ke dashboard utama
