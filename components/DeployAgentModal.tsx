@@ -82,9 +82,17 @@ const DeployAgentModal: React.FC<DeployAgentModalProps> = ({
         .modal-title {
           color: white;
           font-weight: bold;
-          font-size: 24px;
-          line-height: 32px;
-          margin-bottom: 24px;
+          font-size: 20px;
+          line-height: 28px;
+          margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+          .modal-title {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 24px;
+          }
         }
 
         .close-button {
