@@ -196,7 +196,7 @@ export default function LandingPage() {
           {/* Pricing cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {/* Card A: Starter */}
-            <div className="glass-panel rounded-2xl p-8 flex flex-col hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
+            <div className="reveal-card glass-panel rounded-2xl p-8 flex flex-col hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
                 <p className="text-white/70 text-sm font-medium">For Indie Hackers</p>
