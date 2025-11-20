@@ -97,7 +97,8 @@ const SplashScreen: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-9999 bg-black flex flex-col items-center justify-center"
+      className="fixed inset-0 bg-black flex flex-col items-center justify-center"
+      style={{ zIndex: 9999 }}
     >
       {/* Logo Container */}
       <div
