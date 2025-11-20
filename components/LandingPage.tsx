@@ -164,7 +164,7 @@ export default function LandingPage() {
             </div>
 
             {/* Card B: Syndicate (Most Popular) */}
-            <div className="glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:border-[var(--primary)]/80 transition-colors">
+            <div className="glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:shadow-lg hover:shadow-[var(--primary)]/50 transition-all duration-300">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-[var(--primary)] text-black text-xs font-bold rounded-full">
                 MOST POPULAR
               </div>
