@@ -98,7 +98,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 ml-64 w-full min-h-screen bg-[#0A0A0F]">
+      <main className="flex-1 w-full md:ml-64 min-h-screen bg-[#0A0A0F]">
         {children}
       </main>
     </div>
