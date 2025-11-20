@@ -275,13 +275,12 @@ export default function TerminalUI({
   const loadAnimationStartRef = useRef<number>(0);
   const [timeOffset] = useState(() => Math.random() * 100);
   const timeOffsetRef = useRef<number>(timeOffset);
-  const [devicePixelRatio, setDevicePixelRatio] = useState(1);
-
-  useEffect(() => {
+  const [devicePixelRatio] = useState(() => {
     if (typeof window !== 'undefined') {
-      setDevicePixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      return Math.min(window.devicePixelRatio || 1, 2);
     }
-  }, []);
+    return 1;
+  });
 
   const effectiveDpr = dpr ?? devicePixelRatio;
 
