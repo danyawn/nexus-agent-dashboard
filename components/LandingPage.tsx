@@ -55,42 +55,43 @@ export default function LandingPage() {
     return () => ctx.revert();
   }, []);
   return (
-    <div className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden relative">
+    <div ref={containerRef} className="min-h-screen w-full bg-[var(--bg-dark)] text-white overflow-x-hidden relative">
       {/* Terminal Background */}
       <TerminalBackground />
 
       {/* HERO SECTION */}
       <section className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
 
-        {/* Background gradient glow */}
+        {/* Background gradient overlay for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--primary)]/20 rounded-full blur-3xl pointer-events-none" />
 
         {/* Hero content */}
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center space-y-8">
           {/* Status badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--primary)]/50 bg-white/5 backdrop-blur-md hover:border-[var(--primary)] transition-colors">
-            <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse" />
-            <span className="text-sm font-medium text-white/80">v2.4.0 SYSTEM ONLINE</span>
+          <div className="reveal-text inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/50 bg-white/10 backdrop-blur-md hover:border-cyan-400 transition-all duration-300">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-sm font-semibold text-cyan-400">v2.4.0 SYSTEM ONLINE</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center leading-tight bg-gradient-to-r from-[var(--primary)] to-[var(--neon-purple)] bg-clip-text text-transparent">
+          <h1 className="reveal-text text-6xl md:text-8xl font-black text-center leading-tight tracking-tighter text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Orchestrate the Autonomous Future
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/70 text-center max-w-2xl leading-relaxed">
+          <p className="reveal-text text-lg md:text-xl text-white/90 text-center max-w-2xl leading-relaxed font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
             The first command center designed for scaling AI agent swarms. Monitor, debug, and deploy in real-time.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="group px-8 py-3 bg-[var(--primary)] text-black font-semibold rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 flex items-center justify-center gap-2">
+          <div className="reveal-text flex flex-col sm:flex-row gap-4 pt-8">
+            <button className="group px-8 py-4 bg-[var(--primary)] text-black font-bold text-lg rounded-lg hover:bg-[var(--primary)]/90 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-cyan-400/30">
               Enter Console
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="px-8 py-3 border border-white/30 text-white font-semibold rounded-lg hover:border-[var(--primary)]/50 hover:bg-white/5 transition-all duration-200">
+            <button className="px-8 py-4 border-2 border-white/50 text-white font-bold text-lg rounded-lg hover:border-[var(--primary)]/70 hover:bg-white/10 transition-all duration-200">
               Read Docs
             </button>
           </div>
