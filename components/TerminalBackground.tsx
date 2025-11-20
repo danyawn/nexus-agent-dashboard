@@ -42,23 +42,23 @@ export default function TerminalBackground() {
       }}
     >
       <TerminalUI
-        scale={1.0}
+        scale={2.4}
         gridMul={[2, 1]}
         digitSize={1.2}
-        timeScale={0.8}
+        timeScale={0.5}
         pause={false}
-        scanlineIntensity={0.8}
-        glitchAmount={0.8}
-        flickerAmount={0.6}
-        noiseAmp={0.8}
+        scanlineIntensity={0.5}
+        glitchAmount={1}
+        flickerAmount={1}
+        noiseAmp={1}
         chromaticAberration={0}
         dither={0}
-        curvature={0}
-        tint="#00FF7F"
-        mouseReact={true}
+        curvature={0.1}
+        tint="#a7ef9e"
+        mouseReact={false}
         mouseStrength={0.5}
         pageLoadAnimation={false}
-        brightness={0.85}
+        brightness={0.6}
         style={{
           width: '100%',
           height: '100%',
