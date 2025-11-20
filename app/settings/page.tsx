@@ -10,12 +10,12 @@ export default function SettingsPage() {
     <PageTransition>
       <div className="relative flex h-auto w-full flex-col">
         <TopBar />
-        <div className="p-8">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-white mb-2">
+        <div className="p-4 md:p-8">
+          <div className="mb-6 md:mb-8">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
               System Configuration
             </h1>
-            <p className="text-white/60 font-mono">
+            <p className="text-xs md:text-sm text-white/60 font-mono">
               Manage neural parameters & security protocols
             </p>
           </div>
