@@ -17,7 +17,7 @@ export default function LandingPage() {
       />
 
       {/* HERO SECTION */}
-      <section className="relative min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
+      <section className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
 
         {/* Background gradient glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/10 via-transparent to-transparent pointer-events-none" />
