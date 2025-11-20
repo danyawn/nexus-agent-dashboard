@@ -70,28 +70,33 @@ export default function LandingPage() {
       {/* TRUSTED BY SECTION */}
       <section className="relative z-10 w-full py-12 md:py-16 px-4 border-y border-white/10 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-sm md:text-base text-white/50 font-mono tracking-widest mb-8">
+          <p className="text-center text-base md:text-lg font-bold tracking-widest mb-12 bg-gradient-to-r from-white via-[var(--primary)] to-white bg-clip-text text-transparent">
             POWERING NEXT-GEN INFRASTRUCTURE
           </p>
-          
+
           {/* Marquee container */}
           <div className="overflow-hidden">
-            <div className="flex items-center justify-center gap-8 md:gap-12 whitespace-nowrap animate-scroll">
-              {/* Logo placeholders */}
+            <div className="flex items-center justify-center gap-12 md:gap-16 whitespace-nowrap animate-scroll">
+              {/* Company logos */}
               {[
-                { name: 'OpenAI', initials: 'OAI' },
-                { name: 'Anthropic', initials: 'ANT' },
-                { name: 'Vercel', initials: 'VRL' },
-                { name: 'Next.js', initials: 'NXT' },
-                { name: 'Tailwind', initials: 'TWL' },
-                { name: 'OpenAI', initials: 'OAI' },
-                { name: 'Anthropic', initials: 'ANT' },
+                { name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png' },
+                { name: 'Anthropic', logo: 'https://www.anthropic.com/_next/static/media/anthropic-logo.73f92e72.svg' },
+                { name: 'Vercel', logo: 'https://assets.vercel.com/image/upload/v1662130559/nextjs/Icon_dark_background.png' },
+                { name: 'Next.js', logo: 'https://asset.brandfetch.io/idVxahf-mM/id4nKjVzqm.svg' },
+                { name: 'Tailwind', logo: 'https://www.tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc.svg' },
+                { name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1024px-ChatGPT_logo.svg.png' },
+                { name: 'Anthropic', logo: 'https://www.anthropic.com/_next/static/media/anthropic-logo.73f92e72.svg' },
               ].map((company, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-center h-12 px-6 rounded-lg border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors flex-shrink-0"
+                  className="flex items-center justify-center h-16 px-8 rounded-xl border border-white/20 bg-white/[0.08] hover:bg-white/[0.12] transition-all duration-300 flex-shrink-0 backdrop-blur-sm"
                 >
-                  <span className="text-white/60 font-semibold text-sm">{company.name}</span>
+                  <img
+                    src={company.logo}
+                    alt={company.name}
+                    className="h-10 w-auto object-contain filter brightness-0 invert"
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
