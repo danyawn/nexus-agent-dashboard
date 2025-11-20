@@ -60,10 +60,11 @@ export default function LandingPage() {
       <TerminalBackground />
 
       {/* HERO SECTION */}
-      <section className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-hidden">
+      <section className="relative z-10 min-h-screen w-full flex items-center justify-center px-4 md:px-8 overflow-visible">
 
         {/* Background gradient overlay for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none" />
+        <div className="fixed inset-0 h-screen bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none z-0" />
+        <div className="absolute top-0 left-0 right-0 h-[150vh] bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/10 via-transparent to-transparent pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--primary)]/20 rounded-full blur-3xl pointer-events-none" />
 
