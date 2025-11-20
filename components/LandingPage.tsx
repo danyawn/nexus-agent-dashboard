@@ -190,15 +190,15 @@ export default function LandingPage() {
             </div>
 
             {/* Card C: Enterprise */}
-            <div className="glass-panel rounded-2xl p-8 flex flex-col hover:shadow-lg transition-all duration-300">
+            <div className="glass-panel rounded-2xl p-8 flex flex-col hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-white/20">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
-                <p className="text-white/60 text-sm">For Sovereign Entities</p>
+                <p className="text-white/70 text-sm font-medium">For Sovereign Entities</p>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-white">Custom</span>
+                <span className="text-5xl font-bold text-white">Custom</span>
               </div>
-              <button className="w-full py-3 border border-white/20 text-white font-semibold rounded-lg hover:border-white/40 hover:bg-white/5 transition-all duration-200 mb-8">
+              <button className="w-full py-3 border-2 border-white/40 text-white font-semibold rounded-lg hover:border-white/80 hover:bg-white/10 transition-all duration-200 mb-8">
                 Contact Sales
               </button>
               <div className="space-y-4 flex-1">
