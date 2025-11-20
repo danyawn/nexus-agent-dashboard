@@ -66,18 +66,33 @@ const DeployAgentModal: React.FC<DeployAgentModalProps> = ({
           border: 1px solid rgba(255, 255, 255, 0.1);
           box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
           border-radius: 12px;
-          padding: 32px;
+          padding: 24px;
           max-width: 28rem;
-          width: 100%;
+          width: 90%;
           position: relative;
+        }
+
+        @media (min-width: 768px) {
+          .modal-container {
+            padding: 32px;
+            width: 100%;
+          }
         }
 
         .modal-title {
           color: white;
           font-weight: bold;
-          font-size: 24px;
-          line-height: 32px;
-          margin-bottom: 24px;
+          font-size: 20px;
+          line-height: 28px;
+          margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+          .modal-title {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 24px;
+          }
         }
 
         .close-button {
@@ -100,17 +115,30 @@ const DeployAgentModal: React.FC<DeployAgentModalProps> = ({
         }
 
         .form-group {
-          margin-bottom: 20px;
+          margin-bottom: 16px;
+        }
+
+        @media (min-width: 768px) {
+          .form-group {
+            margin-bottom: 20px;
+          }
         }
 
         .form-label {
           display: block;
           color: white;
           font-weight: 600;
-          font-size: 14px;
-          margin-bottom: 8px;
+          font-size: 12px;
+          margin-bottom: 6px;
           text-transform: uppercase;
           letter-spacing: 0.5px;
+        }
+
+        @media (min-width: 768px) {
+          .form-label {
+            font-size: 14px;
+            margin-bottom: 8px;
+          }
         }
 
         .agent-name-input {
@@ -218,8 +246,17 @@ const DeployAgentModal: React.FC<DeployAgentModalProps> = ({
 
         .modal-footer {
           display: flex;
-          gap: 12px;
-          margin-top: 32px;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 24px;
+        }
+
+        @media (min-width: 768px) {
+          .modal-footer {
+            flex-direction: row;
+            gap: 12px;
+            margin-top: 32px;
+          }
         }
 
         .button-cancel {

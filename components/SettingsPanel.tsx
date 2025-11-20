@@ -179,18 +179,20 @@ export default function SettingsPanel() {
           {apiServices.map((service, index) => (
             <div
               key={index}
-              className="flex items-center justify-between p-4 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 p-4 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-colors"
             >
-              <div className="flex items-center gap-4">
-                <div className="flex-1">
-                  <p className="text-white font-medium">{service.name}</p>
+              {/* Left Side - Service Name and Description */}
+              <div className="flex items-start gap-3 sm:gap-4 flex-1">
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-medium break-words">{service.name}</p>
                   <p className="text-white/50 text-xs font-mono">Gateway endpoint</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              {/* Right Side - Status Badge and Reconnect Button */}
+              <div className="flex items-center gap-2 sm:gap-3 flex-wrap sm:flex-nowrap justify-start sm:justify-end">
                 <div
-                  className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
+                  className={`px-3 py-1 rounded-full text-xs font-semibold transition-all flex-shrink-0 ${
                     service.status === 'connected'
                       ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 shadow-[0_0_10px_rgba(0,255,127,0.3)]'
                       : 'bg-red-500/20 text-red-400 border border-red-500/50 shadow-[0_0_10px_rgba(255,0,0,0.3)]'
@@ -200,7 +202,7 @@ export default function SettingsPanel() {
                 </div>
                 <button
                   onClick={() => handleReconnect(index)}
-                  className="flex items-center gap-2 px-4 py-1.5 rounded-lg border border-[var(--primary)]/30 text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all text-sm font-medium"
+                  className="flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-lg border border-[var(--primary)]/30 text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all text-xs sm:text-sm font-medium whitespace-nowrap flex-shrink-0"
                   title="Reconnect service"
                 >
                   <RotateCcw size={14} />
