@@ -218,7 +218,7 @@ export default function LandingPage() {
             </div>
 
             {/* Card B: Syndicate (Most Popular) */}
-            <div className="glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:shadow-2xl hover:shadow-[var(--primary)]/60 hover:-translate-y-2 transition-all duration-300 md:scale-105 md:mb-8">
+            <div className="reveal-card glass-panel rounded-2xl p-8 border-2 border-[var(--primary)] flex flex-col relative hover:shadow-2xl hover:shadow-[var(--primary)]/60 hover:-translate-y-2 transition-all duration-300 md:scale-105 md:mb-8">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-[var(--primary)] to-cyan-400 text-black text-xs font-bold rounded-full shadow-lg shadow-[var(--primary)]/50">
                 MOST POPULAR
               </div>
