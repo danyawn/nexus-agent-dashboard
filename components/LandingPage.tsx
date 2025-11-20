@@ -115,13 +115,12 @@ export default function LandingPage() {
                 <p className="text-white/60 text-sm md:text-base mt-2">Live heatmap visualization of active nodes.</p>
               </div>
               {/* SLOT: SWARM VISUALIZER */}
-              <div className="flex-1 w-full flex items-center justify-center">
-                <div className="w-full h-64 flex items-center justify-center bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-[var(--neon-purple)]/5 rounded-lg border border-[var(--primary)]/20">
-                  <div className="text-center">
-                    <div className="text-xs text-white/50 font-mono mb-2 tracking-widest">[SWARM_VISUALIZER]</div>
-                    <div className="text-white/30 text-sm">Neural network heatmap visualization</div>
-                  </div>
-                </div>
+              <div className="flex-1 w-full flex items-center justify-center overflow-hidden">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F320f4e03b56843478912129c0847c5a5?format=webp&width=800"
+                  alt="Swarm Intelligence Visualizer"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
             </div>
 
