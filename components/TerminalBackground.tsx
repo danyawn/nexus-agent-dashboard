@@ -59,7 +59,7 @@ export default function TerminalBackground() {
         mouseReact={false}
         mouseStrength={0.5}
         pageLoadAnimation={false}
-        brightness={0.6}
+        brightness={0.35}
         style={{
           width: '100%',
           height: '100%',
