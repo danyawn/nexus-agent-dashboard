@@ -45,20 +45,20 @@ export default function TerminalBackground() {
         scale={1.5}
         gridMul={[2, 1]}
         digitSize={1.2}
-        timeScale={1}
+        timeScale={0.8}
         pause={false}
-        scanlineIntensity={1}
-        glitchAmount={1}
-        flickerAmount={1}
-        noiseAmp={1}
+        scanlineIntensity={0.8}
+        glitchAmount={0.8}
+        flickerAmount={0.6}
+        noiseAmp={0.8}
         chromaticAberration={0}
         dither={0}
         curvature={0}
-        tint="#0df2f2"
+        tint="#00FF7F"
         mouseReact={true}
         mouseStrength={0.5}
         pageLoadAnimation={false}
-        brightness={0.6}
+        brightness={0.85}
         style={{
           width: '100%',
           height: '100%',
