@@ -131,13 +131,12 @@ export default function LandingPage() {
                 <p className="text-white/60 text-sm mt-2">Real-time system monitoring.</p>
               </div>
               {/* SLOT: LOG VAULT */}
-              <div className="flex-1 w-full min-h-[300px] flex items-center justify-center">
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[var(--primary)]/5 via-transparent to-[var(--neon-purple)]/5 rounded-lg border border-[var(--primary)]/20">
-                  <div className="text-center">
-                    <div className="text-xs text-white/50 font-mono mb-2 tracking-widest">[LOG_VAULT]</div>
-                    <div className="text-white/30 text-sm">Real-time system logs</div>
-                  </div>
-                </div>
+              <div className="flex-1 w-full min-h-[300px] flex items-center justify-center overflow-hidden">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fa2ea7def80a5425e9628e1d18c145649%2F1f7720494d654ccd820eb86f824b0c22?format=webp&width=800"
+                  alt="Live Kernel Stream Logs"
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
             </div>
 
