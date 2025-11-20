@@ -55,8 +55,8 @@ const generateLogEntries = (): LogEntry[] => {
 
   for (let i = 0; i < 30; i++) {
     const timestamp = new Date(baseTime + i * 3000).toISOString();
-    const level = levels[Math.floor(Math.random() * levels.length)];
-    const service = services[Math.floor(Math.random() * services.length)];
+    const level = levels[i % levels.length];
+    const service = services[i % services.length];
     const message = messages[i % messages.length];
 
     entries.push({
